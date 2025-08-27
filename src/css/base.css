@@ -30,3 +30,25 @@ main {
 main:has(.back-link) {
   text-align: center;
 }
+div.block{
+  
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 7px;
+}
+
+div.one_item{
+    display: flex;
+    flex-direction: column;
+   
+    text-align: center;
+}
+div.one_item h2{
+   font-size: 1.1em;
+   font-weight: bold;
+}
+
+div.one_item p{
+   font-size: 1.1em;
+}

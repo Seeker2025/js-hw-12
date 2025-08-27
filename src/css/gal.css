@@ -1,0 +1,26 @@
+ul.gallery{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: rgb(209, 206, 205);
+    width: 1150px;
+    height: auto;
+    margin: 15px auto;
+ }
+
+ li.gallery_item{
+    padding: 5px;
+    margin: 10px;
+    width: 349px;
+    height: 255px;
+    border: 2px dashed rgb(216, 176, 91);
+    background-color: rgb(255, 255, 255);
+    border: 2px solid gray;
+    
+}
+img.img_itm{
+    display: block;
+    width: 347px;
+    height: 189px;
+   
+}
