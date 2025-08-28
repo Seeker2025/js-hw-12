@@ -1,7 +1,5 @@
-import SimpleLightbox from "simplelightbox";
-import "simplelightbox/dist/simple-lightbox.min.css";
-
 const gallery = document.querySelector('.gallery');
+const loader = document.querySelector('.box');
 
 
     export function createGallery(images){
@@ -46,11 +44,11 @@ function clearGallery(){
 }
 
 function showLoader(){
-
+   loader.style.visibility = 'visible';
 }
 
 function hideLoader(){
-
+   loader.style.visibility = 'hidden';
 }
 
 function showLoadMoreButton(){
