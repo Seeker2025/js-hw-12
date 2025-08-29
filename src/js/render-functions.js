@@ -1,5 +1,8 @@
 const gallery = document.querySelector('.gallery');
 const loader = document.querySelector('.box');
+export let PAGE = 1;
+
+
 
 
     export function createGallery(images){
@@ -39,18 +42,21 @@ const loader = document.querySelector('.box');
 }
 
 
-function clearGallery(){
-
+export function clearGallery(){
+    gallery.innerHTML = '';
 }
 
-function showLoader(){
+export function showLoader(){
    loader.style.visibility = 'visible';
 }
 
-function hideLoader(){
+export function hideLoader(){
    loader.style.visibility = 'hidden';
 }
 
-function showLoadMoreButton(){
-
+export function showLoadMoreButton(){
+   
+   PAGE +=1;
+   console.log(PAGE);
+   return PAGE;
 }
