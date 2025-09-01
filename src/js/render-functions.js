@@ -1,13 +1,12 @@
 const gallery = document.querySelector('.gallery');
 const loader = document.querySelector('.box');
+export const loadMore = document.querySelector('.js_button_more');
+// console.log(loadMore);
 export let PAGE = 1;
 
-
-
-
-    export function createGallery(images){
+export function createGallery(images){
    
-          let arr = null;
+     let arr = null;
      arr = images.map(itm =>`
      <li class="gallery_item">
          <a href="${itm.largeImageURL}">
@@ -41,7 +40,6 @@ export let PAGE = 1;
 
 }
 
-
 export function clearGallery(){
     gallery.innerHTML = '';
 }
@@ -54,9 +52,16 @@ export function hideLoader(){
    loader.style.visibility = 'hidden';
 }
 
-export function showLoadMoreButton(){
-   
+export function addTheOne(){
    PAGE +=1;
-   console.log(PAGE);
+   // console.log(PAGE);
    return PAGE;
+}
+
+export function showLoadMoreButton(){
+   loadMore.style.visibility = 'visible'
+}
+
+export function  hideLoadMoreButton(){
+   loadMore.style.visibility = 'hidden';
 }

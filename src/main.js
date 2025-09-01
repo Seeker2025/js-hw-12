@@ -4,22 +4,24 @@
 // getImagesByQuery('cat', 2);
 
 import axios from 'axios';
+import iziToast from "izitoast";
+import "izitoast/dist/css/iziToast.min.css";
 import {getImagesByQuery } from './js/pixabay-api.js'
-import { clearGallery, showLoader, showLoadMoreButton, PAGE } from './js/render-functions.js';
+import { 
+    clearGallery,
+    showLoader, 
+    addTheOne,
+    PAGE,
+    hideLoadMoreButton,
+    loadMore,
+      } from './js/render-functions.js';
 
-const loadMore = document.querySelector('.js_button_more');
-// console.log(loadMore);
+export const forHidden = document.querySelector('.js_forHidden');
+// console.log(forHidden);
 const form = document.querySelector('.js_form');
-const isObj = {};
 
-loadMore.addEventListener('click', onClick);
-// import iziToast from "izitoast";
-// import "izitoast/dist/css/iziToast.min.css";
-function onClick(){
-    // let PAGE = 1;
-    showLoadMoreButton();
-    console.log(isObj);
-}
+const isObj = {};
+hideLoadMoreButton();
 
 form.addEventListener('submit', inForm);
 
@@ -36,25 +38,35 @@ function inForm(event){
         isObj[name] = value;
         
     })
-    console.log(isObj.search);
-    console.log(typeof(isObj.search));
-     if(isObj.search === ''){
-        // console.log('Hi!');
-    
-        iziToast.show({
-            title: 'Hey',
-            message: 'Enter any word!',
-            titleColor: '#fff',
-            messageColor: '#fff',
-            color: '#b22702', // blue, red, green, yellow
-            position: 'topRight', // bottomRight, bottomLeft, topLeft, topCenter, bottomCenter, center
-        });
-    return;
-
-    }
+                            // console.log(isObj.search);
+                            // console.log(typeof(isObj.search));
+    if(isObj.search === ''){
+                                                        iziToast.show({
+                                                            title: 'Hey',
+                                                            message: 'Enter any word!',
+                                                            titleColor: '#fff',
+                                                            messageColor: '#fff',
+                                                            color: '#b22702', 
+                                                            position: 'topRight',  
+                                                        });
+                return;
+            }
                             showLoader();
+                            hideLoadMoreButton();
                             getImagesByQuery(isObj.search, PAGE);
                             form.reset();
+
+                    loadMore.addEventListener('click', onClick);
+
+                            function onClick(){
+                                let num = addTheOne();
+                                // console.log(isObj);
+                                // console.log(num);
+                                getImagesByQuery(isObj.search, num);
+                            }
+                            // forHidden.style.visibility = 'hidden';
+                            // hideLoadMoreButton();
+
 }
 
 // let PAGE = null;
@@ -66,4 +78,4 @@ function inForm(event){
 // showLoadMoreButton()
 // showLoadMoreButton()
 // console.log(PAGE);
-console.log(isObj);
+// console.log(isObj);

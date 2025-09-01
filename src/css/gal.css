@@ -3,6 +3,12 @@ body{
     padding-top: 15px;
 }
 
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 h1.index{
     text-align: center;
 }
@@ -12,6 +18,11 @@ h1.index{
     font-weight: normal;
     margin: 8px 0;
     color: #d4d3d3;
+}
+
+h2.index_words{
+    font-size: 1.2em;
+    color: rgb(253, 252, 252);
 }
 
 form{
@@ -24,32 +35,45 @@ form{
 
 input{
     background-color: rgb(239, 238, 238);
-    height: 28px;
-    width: 150px;
+    height: 33px;
+    width: 190px;
     margin-right: 10px;
     border-radius: 3px;
     padding-left: 7px;
     border: 1px solid rgb(182, 181, 181);
-    font-size: 1.0em;
+    font-size: 1.1em;
 }
 button.blue_botton{
     background-color: rgb(9, 112, 245);
     border: 1px solid rgb(9, 112, 245);
-    width: 80px;
+    width: 90px;
     border-radius: 4px;
     color: #fff;
-    font-size: 1.0em;
-    height: 32px;
+    font-size: 1.1em;
+    height: 37px;
 } 
+.blue_botton_more{
+    background-color: rgb(9, 112, 245);
+    border: 1px solid rgb(9, 112, 245);
+    font-size: 1.1em;
+    color: #fff;
+    border-radius: 4px;
+    width: 120px;
+    margin: 0px auto 35px;
+    height: 37px;
+    margin-top: -60px;
+
+}
 
 ul.gallery{
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
-   background-color: rgba(93, 101, 109, 0.87);
-    width: 1150px;
+    background-color: rgba(93, 101, 109, 0.87);
+    width: 1532px;
     height: auto;
-    margin: 15px auto;
+    margin: 0px auto;
+    padding-top: 15px;
  }
 
  li.gallery_item{
@@ -60,8 +84,8 @@ ul.gallery{
     border: 2px dashed rgb(216, 176, 91);
     background-color: rgb(255, 255, 255);
     border: 2px solid rgb(57, 57, 57);
-    
 }
+
 img.img_itm{
     display: block;
     width: 347px;
@@ -92,7 +116,12 @@ div.one_item p{
    font-size: 1.1em;
 }
 
+/* .hidden{
+        visibility: hidden;
+     } */
 
+/* spinner */   
+  
 .loader {
     width: 35px;
     height: 35px;
@@ -114,7 +143,7 @@ div.one_item p{
     } 
 
     .box{
-        margin: 10px auto;
+        margin: 25px auto;
         width: 35px;
         height: 35px;
         visibility: hidden;
